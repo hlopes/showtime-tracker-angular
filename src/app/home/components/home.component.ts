@@ -11,7 +11,7 @@ import { Movie } from '@shared/types'
     <p class="text-4xl antialiased">Example page</p>
     {{ movies[0] | json }}
 
-    <img alt="movie backdrop" [src]="getPoster(movies[0].backdrop_path)" />
+<!--    <img alt="movie backdrop" [src]="getPoster(movies[0].backdrop_path)" />-->
   </ng-container>`,
 })
 export class HomeComponent implements OnInit {
