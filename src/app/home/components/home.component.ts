@@ -1,18 +1,14 @@
 import { Component, inject, OnInit } from '@angular/core'
 import { MoviesService } from '@shared/services/movies.service'
-import { CommonModule } from '@angular/common'
+import { CommonModule, NgOptimizedImage } from '@angular/common'
 import { Movie } from '@shared/types'
+import { RouterOutlet } from '@angular/router'
 
 @Component({
-  selector: 't-example',
+  selector: 'stt-home',
   standalone: true,
-  imports: [CommonModule],
-  template: `<ng-container *ngIf="movies">
-    <p class="text-4xl antialiased">Example page</p>
-    {{ movies[0] | json }}
-
-<!--    <img alt="movie backdrop" [src]="getPoster(movies[0].backdrop_path)" />-->
-  </ng-container>`,
+  imports: [CommonModule, RouterOutlet, NgOptimizedImage],
+  templateUrl: './home.component.html',
 })
 export class HomeComponent implements OnInit {
   moviesService = inject(MoviesService)
@@ -25,7 +21,11 @@ export class HomeComponent implements OnInit {
       .subscribe((movies) => (this.movies = movies))
   }
 
-  getPoster(movieImage: string) {
-    return `https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/${movieImage}`
+  getBackdrop(movie: Movie) {
+    return `https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/${movie.backdrop_path}`
+  }
+
+  getPoster(movie: Movie) {
+    return `https://www.themoviedb.org/t/p/w440_and_h660_face/${movie.poster_path}`
   }
 }

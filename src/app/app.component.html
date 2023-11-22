@@ -1,10 +1,25 @@
-<div class="h-full w-full bg-cover bg-no-repeat bg-center opacity-50" [style.background-image]="'url(https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces//kjQBrc00fB2RjHZB3PGR4w9ibpz.jpg)'">
-</div>
-  <section class="absolute z-10">top bar</section>
+<!--<div class="top-0 left-0 right-0 bottom-0 opacity-60 bg-gradient-to-b from-slate-800 to-slate-900 fixed">-->
+<!--</div>-->
+<!--<div class="h-screen w-full bg-cover bg-no-repeat bg-center opacity-60 fixed" [style.background-image]="'url(https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces//kjQBrc00fB2RjHZB3PGR4w9ibpz.jpg)'">-->
+<!--</div>-->
+<div class="relative w-full h-screen overflow-hidden">
+  <img class="w-full h-full object-cover object-center brightness-50 fixed" src="https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces//kjQBrc00fB2RjHZB3PGR4w9ibpz.jpg" />
 
-  <div class="flex">
-    <aside>side bar</aside>
+  <div class="top-0 left-0 w-full absolute h-full">
+    <main class="z-10 max-w-6xl mx-auto h-full">
+      <stt-top-bar />
+      <div class="flex z-10 gap-4 h-full">
+        <aside>side bar</aside>
 
-    <router-outlet></router-outlet>
+        <router-outlet></router-outlet>
+      </div>
+    </main>
   </div>
+</div>
+
+
+
+
+
+
 

@@ -1,0 +1,18 @@
+<ng-container *ngIf="movies?.[0] as movie">
+  <div class="flex flex-col justify-center h-full">
+    <div class="max-w-xl">
+      <h2 class="text-white antialiased text-8xl font-bold mb-10">{{movie.title}}</h2>
+      <p class="text-white text-2xl mb-2">{{movie.vote_average }}</p>
+      <p class="text-white text-2xl mb-2">{{movie.release_date | date:'yyyy' }}</p>
+      <p class="text-white text-xl tracking-wider leading-8 font-light subpixel-antialiased">{{movie.overview}}</p>
+    </div>
+    <div class="flex">
+      <div *ngFor="let movie of movies">
+        <div>
+          <img [ngSrc]="getPoster(movie)" width="440" height="660">
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
